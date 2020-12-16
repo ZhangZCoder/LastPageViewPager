@@ -53,7 +53,9 @@ public class LastPageViewPager extends ViewPager {
             setCurrentItem(toNextPage);
             super.scrollTo(screenWidth * toNextPage, y);
             if (isToast && isToast2){//避免多次提示
-                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                if (msg != null && !msg.equals("")){
+                    Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                }
                 isToast = false;
             }
         }else {
